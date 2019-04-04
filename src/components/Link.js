@@ -1,5 +1,14 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
+
 import { RouterContext } from "../context/Router";
+
+const styles = {
+  a: {
+    textDecoration: "inherit",
+    color: "inherit"
+  }
+};
 
 const Link = ({ children, to, ...props }) => {
   const { changeRoute } = useContext(RouterContext);
@@ -17,10 +26,19 @@ const Link = ({ children, to, ...props }) => {
   };
 
   return (
-    <a href="" onClick={handleClick}>
+    <Root href="" onClick={handleClick}>
       {children}
-    </a>
+    </Root>
   );
 };
+
+const Root = styled.a`
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
 
 export default Link;

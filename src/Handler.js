@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import pathToRegexp from "path-to-regexp";
+import styled from "styled-components";
 
 import { RouterContext } from "./context/Router";
 
@@ -8,6 +9,9 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import User from "./pages/User";
 import UserProduct from "./pages/UserProduct";
+import SearchUser from "./pages/SearchUser";
+
+import NavBar from "./components/Navbar";
 
 const PAGES = [
   {
@@ -17,6 +21,10 @@ const PAGES = [
   {
     component: About,
     path: "/about"
+  },
+  {
+    component: SearchUser,
+    path: "/search-user"
   },
   {
     component: User,
@@ -58,7 +66,29 @@ const Handler = () => {
 
   const ComponentToRender = pageToRender.component || ForOhFor;
 
-  return <ComponentToRender history={routerProps} />;
+  return (
+    <Root>
+      <NavBar pathname={pathname} />
+      <span>
+        Pathname is <strong>{pathname}</strong>
+      </span>
+      <Container>
+        <ComponentToRender history={routerProps} />
+      </Container>
+    </Root>
+  );
 };
+
+const Root = styled.div`
+  height: 100%;
+`;
+
+const Container = styled.div`
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+`;
 
 export default Handler;

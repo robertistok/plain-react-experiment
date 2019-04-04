@@ -1,6 +1,6 @@
 import React from "react";
 
-import Link from "../routing/Link";
+import Link from "../components/Link";
 
 const UserProduct = () => (
   <div>
