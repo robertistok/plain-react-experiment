@@ -1,23 +1,20 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import { RouterContext } from "../context/Router";
+import { RouterContext } from "./Router";
 
-const styles = {
-  a: {
-    textDecoration: "inherit",
-    color: "inherit"
+const Link = ({ children, to, onClick, ...props }) => {
+  if (!to && !onClick) {
+    throw new Error("You must supply a 'to' or 'onClick' prop to the link");
   }
-};
 
-const Link = ({ children, to, ...props }) => {
   const { changeRoute } = useContext(RouterContext);
 
   const handleClick = event => {
     if (
-      !event.defaultPrevented && // onClick prevented default
-      event.button === 0 && // ignore everything but left clicks
-      (!props.target || props.target === "_self") // let browser handle "target=_blank" etc.
+      !event.defaultPrevented &&
+      event.button === 0 &&
+      (!props.target || props.target === "_self")
     ) {
       event.preventDefault();
 
@@ -26,7 +23,7 @@ const Link = ({ children, to, ...props }) => {
   };
 
   return (
-    <Root href="" onClick={handleClick}>
+    <Root href={to} onClick={onClick || handleClick}>
       {children}
     </Root>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
-import Router, { RouterContext } from "../context/Router";
+import { RouterContext } from "../components/Router";
 
 const SearchUser = props => {
   const [userId, setUserId] = useState(0);

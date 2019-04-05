@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Link from "./Link";
 
-const Navbar = ({ pathname }) => {
+const Navbar = () => {
   return (
     <Root>
       <Title>Router without react-router</Title>
@@ -17,6 +17,9 @@ const Navbar = ({ pathname }) => {
         </NavItem>
         <NavItem>
           <Link to="/search-user">Search user</Link>
+        </NavItem>
+        <NavItem>
+          <Link to={`/for-oh-for/${Math.random()}`}>404</Link>
         </NavItem>
       </Nav>
     </Root>

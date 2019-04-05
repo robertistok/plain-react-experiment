@@ -2,16 +2,13 @@ import React, { useContext, useEffect } from "react";
 import pathToRegexp from "path-to-regexp";
 import styled from "styled-components";
 
-import { RouterContext } from "./context/Router";
+import { RouterContext } from "./components/Router";
 
 import ForOhFor from "./pages/404";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import User from "./pages/User";
-import UserProduct from "./pages/UserProduct";
 import SearchUser from "./pages/SearchUser";
-
-import NavBar from "./components/Navbar";
 
 const PAGES = [
   {
@@ -29,10 +26,6 @@ const PAGES = [
   {
     component: User,
     path: "/user/:id"
-  },
-  {
-    component: UserProduct,
-    path: "/user/:id/product/:productId"
   }
 ];
 
@@ -68,7 +61,6 @@ const Handler = () => {
 
   return (
     <Root>
-      <NavBar pathname={pathname} />
       <span>
         Pathname is <strong>{pathname}</strong>
       </span>

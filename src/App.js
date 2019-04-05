@@ -1,45 +1,11 @@
 import React from "react";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 
-import Router from "./context/Router";
+import Router from "./components/Router";
 import Handler from "./Handler";
+import NavBar from "./components/Navbar";
 
-const theme = {
-  primary: "#0b0c10",
-  textColor: "#66FCF1"
-};
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0
-  }
-
-  html, body, #root {
-    height: 100%;
-  }
-
-  * {
-    color: ${({ theme }) => theme.textColor};
-    font-family: Courier;
-  }
-
-  button {
-    {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
-    color: inherit;
-    font: inherit;
-    line-height: normal;
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-    -webkit-appearance: none;
-}
-  }
-`;
+import { theme, GlobalStyle } from "./utils/styles";
 
 const App = ({ pathname }) => {
   return (
@@ -48,6 +14,8 @@ const App = ({ pathname }) => {
         <GlobalStyle />
         <Root>
           <Router>
+            <NavBar pathname={pathname} />
+
             <Handler />
           </Router>
         </Root>
