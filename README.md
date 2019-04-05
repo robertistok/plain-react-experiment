@@ -1,12 +1,14 @@
+*Example app:* https://simple-react-router.netlify.com/
+
 This project was bootstrapped with [create-react-app](https://github.com/facebook/create-react-app).
 
-# What is this about?
+## What is this about?
 
 It is a simple experiment, where I try to implement basic routing in React.
 
 Apart from the packages provided by [create-react-app](https://github.com/facebook/create-react-app), [styled-components](https://github.com/styled-components/styled-components) for styling and [path-to-regexp](https://github.com/pillarjs/path-to-regexp) to parse the pathname as a regex, the project does not use any external packages.
 
-# Try it out
+## Try it out
 1. `git clone git@github.com:robertistok/plain-react-experiment.git`
 2. `npm install`
 3. `npm run start`
