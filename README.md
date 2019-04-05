@@ -1,7 +1,5 @@
 *Example app:* https://simple-react-router.netlify.com/
 
-This project was bootstrapped with [create-react-app](https://github.com/facebook/create-react-app).
-
 ## What is this about?
 
 It is a simple experiment, where I try to implement basic routing in React.
